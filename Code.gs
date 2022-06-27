@@ -103,7 +103,7 @@ function getRangeByID(id){
     var idList = readData(globalVariables().spreadsheetId,globalVariables().idRange);
     for(var i=0;i<idList.length;i++){
       if(id==idList[i][0]){
-        return 'project-0!A'+(i+2)+':'+globalVariables().lastCol+(i+2);
+        return 'sheetName!A'+(i+2)+':'+globalVariables().lastCol+(i+2);
       }
     }
   }
@@ -133,7 +133,7 @@ function getLastTenRows(){
   if(lastRow<=11){
     var range = globalVariables().dataRage;
   }else{
-    var range = 'project-0!A'+(lastRow-9)+':'+globalVariables().lastCol;
+    var range = 'sheetName!A'+(lastRow-9)+':'+globalVariables().lastCol;
   }
   var lastTenRows = readData(globalVariables().spreadsheetId,range);
   return lastTenRows;
